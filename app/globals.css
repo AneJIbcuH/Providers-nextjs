@@ -1,0 +1,11 @@
+body {
+    background: rgb(255, 243, 208);
+}
+
+.hidden {
+    visibility: hidden;
+  }
+  
+  .notification {
+    color: red;
+  }
