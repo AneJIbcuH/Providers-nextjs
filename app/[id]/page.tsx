@@ -6,12 +6,11 @@ import { message } from "antd";
 import { useRouter } from "next/navigation";
 import { Provider } from "../page";
 
+type ProviderParams = {
+  id: number;
+}
 
-
-
-
-
-export default function Provider({ params }) {
+export default function Provider({ params }: { params: ProviderParams }) {
   const [provider, setProvider] = useState();
   const router = useRouter();
 
@@ -61,40 +60,6 @@ export default function Provider({ params }) {
 
   const [messageApi, contextHolder] = message.useMessage();
 
-  // function pay() {
-  //   messageApi.open({
-  //     type: "loading",
-  //     content: "Переводим деньги...",
-  //     duration: 0,
-  //   });
-  //   setTimeout(messageApi.destroy, 2000);
-  //   setTimeout(random, 2000);
-  // }
-
-  // function random() {
-  //   const numb = Math.random();
-  //   if (numb > 0.5) {
-  //     success();
-  //     setTimeout(navigateBack, 1500);
-  //   } else {
-  //     error();
-  //   }
-  // }
-
-  // const success = () => {
-  //   messageApi.open({
-  //     type: "success",
-  //     content: "Успешно, платеж одобрен!",
-  //   });
-  // };
-
-  // const error = () => {
-  //   messageApi.open({
-  //     type: "error",
-  //     content: "Ошибка, попробуйте еще раз",
-  //   });
-  // };
-
   function pay() {
     return new Promise((resolve, reject) => {
       messageApi.open({
@@ -109,7 +74,7 @@ export default function Provider({ params }) {
     });
   }
   
-  function random(resolve, reject) {
+  function random(resolve: (value?: void) => void, reject: (reason?: any) => void) {
     const numb = Math.random();
     if (numb > 0.5) {
       success(resolve);
@@ -118,7 +83,7 @@ export default function Provider({ params }) {
     }
   }
   
-  function success(resolve) {
+  function success(resolve: (value?: void) => void) {
     messageApi.open({
       type: "success",
       content: "Успешно, платеж одобрен!",
@@ -129,7 +94,7 @@ export default function Provider({ params }) {
     }, 1500);
   }
   
-  function error(reject) {
+  function error(reject: (reason?: any) => void) {
     messageApi.open({
       type: "error",
       content: "Ошибка, попробуйте еще раз",
