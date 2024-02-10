@@ -74,7 +74,7 @@ export default function Provider({ params }: { params: ProviderParams }) {
     });
   }
   
-  function random(resolve: (value?: void) => void, reject: (reason?: any) => void) {
+  function random(resolve: any, reject: any) {
     const numb = Math.random();
     if (numb > 0.5) {
       success(resolve);
@@ -83,7 +83,7 @@ export default function Provider({ params }: { params: ProviderParams }) {
     }
   }
   
-  function success(resolve: (value?: any) => void) {
+  function success(resolve: any) {
     messageApi.open({
       type: "success",
       content: "Успешно, платеж одобрен!",
@@ -94,7 +94,7 @@ export default function Provider({ params }: { params: ProviderParams }) {
     }, 1500);
   }
   
-  function error(reject: (reason?: any) => void) {
+  function error(reject: any) {
     messageApi.open({
       type: "error",
       content: "Ошибка, попробуйте еще раз",
