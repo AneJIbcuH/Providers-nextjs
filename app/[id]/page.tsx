@@ -11,7 +11,7 @@ type ProviderParams = {
 }
 
 export default function Provider({ params }: { params: ProviderParams }) {
-  const [provider, setProvider] = useState();
+  const [provider, setProvider] = useState<Provider>();
   const router = useRouter();
 
   const fetchDataFromApi = async () => {
