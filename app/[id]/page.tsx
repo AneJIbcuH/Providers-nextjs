@@ -83,7 +83,7 @@ export default function Provider({ params }: { params: ProviderParams }) {
     }
   }
   
-  function success(resolve: (value?: void) => void) {
+  function success(resolve: (value?: any) => void) {
     messageApi.open({
       type: "success",
       content: "Успешно, платеж одобрен!",
