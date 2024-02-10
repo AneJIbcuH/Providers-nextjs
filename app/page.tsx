@@ -10,7 +10,7 @@ export type Provider = {
 };
 
 export default function HomePage() {
-  const [providers, setProviders] = useState();
+  const [providers, setProviders] = useState<Provider[]>();
 
   const fetchDataFromApi = async () => {
     try {
