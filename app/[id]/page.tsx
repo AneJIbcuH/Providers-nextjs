@@ -90,7 +90,7 @@ export default function Provider({ params }: { params: ProviderParams }) {
     });
     setTimeout(() => {
       navigateBack();
-      resolve("Платеж успешно проведен");
+      resolve();
     }, 1500);
   }
   
@@ -99,7 +99,7 @@ export default function Provider({ params }: { params: ProviderParams }) {
       type: "error",
       content: "Ошибка, попробуйте еще раз",
     });
-    reject("Ошибка при проведении платежа");
+    reject();
   }
 
   return (
