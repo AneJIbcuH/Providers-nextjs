@@ -5,7 +5,7 @@ export async function GET() {
         {
           id: 1,
           name: "МТС",
-          logo: "https://uslugi-alt.speczakaz.info/uploads/ob/365640/imag1.jpg",
+          logo: "https://sun6-20.userapi.com/s/v1/ig2/VVheC3A_aKFS50H44KztVQRh0BFHvVX97mJpayPEi4rukxTQHjF156yEwCeQJXYZTS3FDF1C7KZYpmraAm59mtEn.jpg?size=1440x1440&quality=96&crop=79,2,1440,1440&ava=1",
         },
         {
           id: 2,
